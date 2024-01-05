@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Data Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1 style="margin-left:500px">Web Visualization</h1>
+
+    <div id="plotly-graph1"></div>
+    <div id="plotly-graph2"></div>
+    <div id="plotly-graph3"></div>
+
+    <script>
+        var graphJSON1 = {{ graphJSON1|tojson|safe }};
+        var graphDiv1 = document.getElementById('plotly-graph1');
+        Plotly.newPlot(graphDiv1, JSON.parse(graphJSON1));
+
+        var graphJSON2 = {{ graphJSON2|tojson|safe }};
+        var graphDiv2 = document.getElementById('plotly-graph2');
+        Plotly.newPlot(graphDiv2, JSON.parse(graphJSON2));
+
+        var graphJSON3 = {{ graphJSON3|tojson|safe }};
+        var graphDiv3 = document.getElementById('plotly-graph3');
+        Plotly.newPlot(graphDiv3, JSON.parse(graphJSON3));
+    </script>
+    
+    <h3 style="margin-left:60px">What observations and insights can you make here from the data?</h3>
+    <p style="margin-left:60px"> Several conclusions can be drawn from examining the NBA coach performance information that is presented. Identifying the coach who finished the 1985 season with the most wins highlights an exemplary example in coaching brilliance for that particular year, so igniting an investigation into the tactics or team dynamics that enabled such accomplishment. Even a thorough summary of team performance is given by showing the average number of wins (which combines regular season and playoff triumphs) for each Team ID (TID). This gives insights into the general competitiveness of various teams throughout time. Determining the coach with the greatest number of teams coached reveals trends in coaching mobility and flexibility, inspiring additional research into whether managing several teams is associated with general coaching success or particular accomplishments. </p>
+
+    <h3 style="margin-left:60px">What are you using to design your web interface? </h3>
+    <h7 style="margin-left:60px"> The web interface is designed using HTML. Plotly Express is used for creating interactive data visualisations. JS is used to handle the interactions and work with Plotly Charts.  </h7>
+    <br>
+    <h3 style="margin-left:60px">What is the architecture for the web page?</h3>
+    <h7 style="margin-left:60px"> The architecture is as follows:
+        Client side: HTML, CSS, Java Script |
+        Server side: Flask, Plotly Express |
+        Data: CSV  
+    </h7>
+    <br>
+    <h3 style="margin-left:60px">How are you reading the data?</h3>
+    <h7 style="margin-left:60px">Data reading is done using the pandas library in python.</h7>
+    <br>
+    <h3 style="margin-left:60px">How much time did you use to complete this exercise?</h3>
+    <p style="margin-left:60px"> 3 Hours 40 Minutes </p>
+    <br> 
+</body>
+</html>
+
